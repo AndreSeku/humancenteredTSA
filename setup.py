@@ -1,9 +1,10 @@
-from distutils.core import setup
+#from distutils.core import setup
+from setuptools import find_packages, setup
 
 setup(
     name = 'hctsa',
-    packages = ['hctsa'],
-    version = 'v0.0.3',  # Ideally should be same as your GitHub release tag version
+    packages = find_packages(),
+    version = '0.0.4',  # Ideally should be same as your GitHub release tag version
     description = 'Human-Centered TimeSeries Analysis Package',
     author = 'Andre Sekulla',
     author_email = 'andreseku@gmail.com',
