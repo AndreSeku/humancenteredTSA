@@ -9,7 +9,7 @@ setup(
     author = 'Andre Sekulla',
     author_email = 'andreseku@gmail.com',
     url = 'https://github.com/AndreSeku/humancenteredTSA',
-    download_url = 'https://github.com/AndreSeku/humancenteredTSA/archive/refs/tags/v0.0.3.tar.gz',
+    download_url = 'https://github.com/AndreSeku/humancenteredTSA/archive/refs/tags/0.0.4.tar.gz',
     keywords = ['timeseries', 'analysis', 'hcml'],
     classifiers = [],
 )
