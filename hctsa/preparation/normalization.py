@@ -12,7 +12,7 @@ def standard(df: DataFrame) -> DataFrame:
     @param df: pd.DataFrame
   """
   for col in list(df.columns):
-    df[col] = (df[col] - df[col].min()) / (df[col].max - df[col].min)
+    df[col] = (df[col] - df[col].min()) / (df[col].max() - df[col].min())
   return df
   
 def zscore(df: DataFrame) -> DataFrame:
