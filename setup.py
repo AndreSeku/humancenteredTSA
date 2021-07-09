@@ -3,7 +3,7 @@ from distutils.core import setup
 setup(
     name = 'hctsa',
     packages = ['hctsa'],
-    version = 'v0.0.1',  # Ideally should be same as your GitHub release tag version
+    version = 'v0.0.2',  # Ideally should be same as your GitHub release tag version
     description = 'Human-Centered TimeSeries Analysis Package',
     author = 'Andre Sekulla',
     author_email = 'andreseku@gmail.com',
