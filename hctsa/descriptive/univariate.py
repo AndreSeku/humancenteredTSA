@@ -1,15 +1,19 @@
+#!/usr/bin/env python3
+
 '''
 Methods for univariate descriptive timeseries analysis.
 '''
 
 import pandas as pd
+from pandas import Series
 
-def simple_descriptive_analysis(series):
+def simple_descriptive_analysis(series: Series) -> dict:
   '''
+    Returns dictionary with TimeSeries specific features.
     This method generates a simple descriptive analysis of the timeseris data.
     TODO ...
-    Input: pd.Series
-    Output: Dictionary with TimeSeries specific features.
+    @param series: pd.Series
+   
   '''
   result = {
     'min': series.min(),

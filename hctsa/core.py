@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 '''
 This is the hctsa-core class.
 Storing the timeseries data within a pandas DataFrame.
