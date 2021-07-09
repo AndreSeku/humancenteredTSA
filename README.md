@@ -1,12 +1,12 @@
 # humancenteredTSA
-humancenteredTSA
+human centered TimeSeries Analysis
 
 ## Project Structure
-- hctsa: core files
+- hctsa: core folders and files
 - - descriptive timeseries analysis
-- - human-centered pattern recognition
+- - preparation of timeseries data
+- - pattern recognition metrics
 - - visualizations and explainability
 
-
-## Requirements
+## Dependencies
 - pandas
