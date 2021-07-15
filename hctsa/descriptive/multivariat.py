@@ -3,3 +3,7 @@
 '''
 Methods for multivariate descriptive timeseries analysis.
 '''
+
+# TODO
+# correlation
+# covarianz
