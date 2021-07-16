@@ -6,6 +6,7 @@ Methods for univariate descriptive timeseries analysis.
 
 import pandas as pd
 from pandas import Series, DataFrame
+import math
 
 def simple_descriptive_analysis(series: Series) -> dict:
   '''
@@ -34,13 +35,30 @@ def rolling_mean(series: Series, window=5) -> Series:
   '''
   return series.rolling(window, min_periods=1).mean()
 
+def rolling_std(series: Series, window=5) -> Series:
+  '''
+    Returns a Series with the rolling std.
+    @param series: pd.Series
+  '''
+  return series.rolling(window, min_periods=1).std()
+
 def confidence_interval(series: Series) -> DataFrame:
   '''
     Returns a DataFrame with three columns, the upper and lower bound and the rolling mean for the confidence interval of the input timeseries.
     @param series: pd.Series
   '''
-  # TODO
-  ...
+  result_df = pd.DataFrame()
+  result_df['mean'] = rolling_mean(series)
+  buf_std = rolling_std(series)
+  ci95_hi = []
+  ci95_lo = []
+  for i in range(0,len(result_df.index)):
+    ci95_hi.append(result_df['mean'][i] + 1.95*buf_std[i]/math.sqrt(5))
+    ci95_lo.append(result_df['mean'][i] - 1.95*buf_std[i]/math.sqrt(5))
+  
+  result_df['ci_hi'] = ci95_hi
+  result_df['ci_lo'] = ci95_lo
+  return result_df
 
 def value_distribution(series: Series, bins=-1) -> Series:
   '''
@@ -55,7 +73,10 @@ def value_distribution(series: Series, bins=-1) -> Series:
 
 ####### TEST
 if __name__ == '__main__':
-  test_df = pd.Series(data=[0.1,1.2,2.5,3.7,4.5,5,6,3,2314,3,12,213,23,3,3,1])
-  print(value_distribution(test_df))
+  test_df = pd.Series(data=[0.1,1.2,2.5,3.7,4.5,5,6,3,10,3,12,18,23,20,15,10]*3)
+  import seaborn as sns
+  import matplotlib.pyplot as plt
+  sns.lineplot(data=confidence_interval(test_df))
+  plt.show()
   # print(simple_descriptive_analysis(test_df))
   # print(rolling_mean(test_df))

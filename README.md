@@ -10,3 +10,4 @@ human centered TimeSeries Analysis
 
 ## Dependencies
 - pandas
+- math
