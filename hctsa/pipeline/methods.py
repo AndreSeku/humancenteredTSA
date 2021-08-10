@@ -6,7 +6,9 @@ Method mapping file, needed for the string to method mapping functionality.
 
 # Imports
 from ..preparation.normalization import *
+from ..preparation.transformation import *
 from ..descriptive.univariate import *
+from ..visualization.seaborn import *
 
 # Preparations.Normalizations
 def prep_norm_zscore(df: DataFrame) -> DataFrame:
@@ -14,6 +16,13 @@ def prep_norm_zscore(df: DataFrame) -> DataFrame:
 
 def prep_norm_standard(df: DataFrame) -> DataFrame:
   return standard(df)
+
+# Preparations.Transformation
+def prep_transform_point_absdiff_transformation(series: Series) -> Series:
+  return point_absdiff_transformation(series)
+
+def prep_transform_point_slope_transformation(series: Series) -> Series:
+  return point_slope_transformation(series)
 
 # Descriptive.Univariate
 def descr_uni_rolling_mean(series: Series) -> Series:
@@ -30,3 +39,12 @@ def descr_uni_value_distribution(series: Series) -> Series:
 
 def descr_uni_simple_descriptive_analysis(series: Series) -> dict:
   return simple_descriptive_analysis(series)
+
+# Visualizations.Seaborn
+def viz_sns_line_plot_series(series: Series) -> None:
+  # TODO return graphic.. 
+  return sns_line_plot_series(series)
+
+def viz_sns_line_plot_ci(series: Series) -> None:
+  # TODO return graphic.. 
+  return sns_line_plot_ci(series)

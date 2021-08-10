@@ -9,28 +9,25 @@ import hctsa.pipeline.methods as methods
 
 class Pipeline():
   main_pipeline = []
-  # __preparations__ = []
-  # __descriptive__ = []
-  # __non_descriptive__ = []
-  # __visualize__ = [] # "Output Layer"
 
   # Main Data Variable
   core_data = []
 
-  # DICTIONARIES - TODO load from config.ini file ... (config fuer erlaubtenachfolgerfunctionen)
-  start_methods = ['zscore','standard',...]
-  method_rules = {'zscore': ['rolling_mean', 'rolling_std', 'confidence_interval', 'value_distribution', 'simple_descriptive_analysis'], 
-                  'standard': ['rolling_mean', 'rolling_std', 'confidence_interval', 'value_distribution', 'simple_descriptive_analysis'],
-                  'rolling_mean': ['confidence_interval', 'value_distribution', 'simple_descriptive_analysis'],
-                  'rolling_std': ['confidence_interval', 'value_distribution', 'simple_descriptive_analysis'],                  
+  # DICTIONARIES - TODO load from config.json file ... (config fuer erlaubtenachfolgerfunctionen)
+  start_methods = ['zscore','standard','point_absdiff_transformation', 'point_slope_transformation']
+  method_rules = {'zscore': ['rolling_mean', 'rolling_std', 'confidence_interval', 'value_distribution', 'simple_descriptive_analysis', 'sns_line_plot_series'], 
+                  'standard': ['rolling_mean', 'rolling_std', 'confidence_interval', 'value_distribution', 'simple_descriptive_analysis', 'sns_line_plot_series'],
+                  'rolling_mean': ['confidence_interval', 'value_distribution', 'simple_descriptive_analysis', 'sns_line_plot_series'],
+                  'rolling_std': ['confidence_interval', 'value_distribution', 'simple_descriptive_analysis', 'sns_line_plot_series'],                  
+                  'point_absdiff_transformation': ['zscore', 'standard', 'rolling_mean', 'rolling_std', 'confidence_interval', 'value_distribution', 'simple_descriptive_analysis', 'sns_line_plot_series'],
+                  'point_slope_transformation': ['zscore', 'standard', 'rolling_mean', 'rolling_std', 'confidence_interval', 'value_distribution', 'simple_descriptive_analysis', 'sns_line_plot_series'],
                   'value_distribution': [],
-                  'confidence_interval': [],
-                  'simple_descriptive_analysis': []
+                  'confidence_interval': ['sns_line_plot_ci'],
+                  'simple_descriptive_analysis': [],
+
+                  'sns_line_plot_series': [],
+                  'sns_line_plot_ci': []
                   }
-  # prep_methods = {}
-  # descr_methods = {}
-  # ndescr_methods = {}
-  # vis_methods = {}
   
   def __init__(self, series: pd.Series) -> None:
     self.core_data = series
@@ -41,7 +38,7 @@ class Pipeline():
       Loads pd.Series data as core_data from filename.
       @param filename: str
     '''
-    self.core_data =pd.read_csv(path=filename)
+    self.core_data = pd.read_csv(path=filename, squeeze=True)
     return
 
   def add_method(self, add_function: str, position: int = -1) -> bool:
@@ -67,6 +64,9 @@ class Pipeline():
         print('error: function cannot be added: ', add_function)
         return False
     return True
+
+  def del_method():
+    ...
 
   def add_series(self, series: pd.Series) -> bool:
     ...
