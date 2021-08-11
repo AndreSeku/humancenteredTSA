@@ -21,7 +21,6 @@ class Pipeline():
   def __init__(self, series: pd.Series) -> None:
     '''
       Initialization of a new Pipeline Object.
-
       @param series: pd.Series
     '''
     self.core_data = series
@@ -46,7 +45,6 @@ class Pipeline():
         -> check if method is in method_rules.yml for specific "nachfolger function"
       3) if possible, add method to method-pipeline-array
       Return boolean - success or error msg
-
       @param add_function: str
       @param position: int
     '''
