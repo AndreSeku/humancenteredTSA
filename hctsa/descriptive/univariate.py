@@ -14,7 +14,7 @@ def simple_descriptive_analysis(series: Series) -> dict:
     This method generates a simple descriptive analysis of the timeseris data.
     TODO ...
     @param series: pd.Series
-   
+     
   '''
   result = {
     'min': series.min(),
