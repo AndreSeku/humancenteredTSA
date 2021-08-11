@@ -5,32 +5,23 @@ Pipeline Class, for building a user defined pipeline for timeseries manipulation
 '''
 
 import pandas as pd
+import yaml
 import hctsa.pipeline.methods as methods
 
 class Pipeline():
+  # Main Pipeline Array
   main_pipeline = []
 
   # Main Data Variable
   core_data = []
 
-  # DICTIONARIES - TODO load from config.json file ... (config fuer erlaubtenachfolgerfunctionen)
-  start_methods = ['zscore','standard','point_absdiff_transformation', 'point_slope_transformation']
-  method_rules = {'zscore': ['rolling_mean', 'rolling_std', 'confidence_interval', 'value_distribution', 'simple_descriptive_analysis', 'sns_line_plot_series'], 
-                  'standard': ['rolling_mean', 'rolling_std', 'confidence_interval', 'value_distribution', 'simple_descriptive_analysis', 'sns_line_plot_series'],
-                  'rolling_mean': ['confidence_interval', 'value_distribution', 'simple_descriptive_analysis', 'sns_line_plot_series'],
-                  'rolling_std': ['confidence_interval', 'value_distribution', 'simple_descriptive_analysis', 'sns_line_plot_series'],                  
-                  'point_absdiff_transformation': ['zscore', 'standard', 'rolling_mean', 'rolling_std', 'confidence_interval', 'value_distribution', 'simple_descriptive_analysis', 'sns_line_plot_series'],
-                  'point_slope_transformation': ['zscore', 'standard', 'rolling_mean', 'rolling_std', 'confidence_interval', 'value_distribution', 'simple_descriptive_analysis', 'sns_line_plot_series'],
-                  'value_distribution': [],
-                  'confidence_interval': ['sns_line_plot_ci'],
-                  'simple_descriptive_analysis': [],
-
-                  'sns_line_plot_series': [],
-                  'sns_line_plot_ci': []
-                  }
+  # DICTIONARIE for specific pipeline rules, loaded from method_rules.yml file.
+  method_rules = []
   
   def __init__(self, series: pd.Series) -> None:
     self.core_data = series
+    with open('hctsa/pipeline/method_rules.yml', 'r') as file:
+      self.method_rules = yaml.safe_load(file)
     return
 
   def load_data_csv(self, filename: str) -> None:
@@ -52,13 +43,13 @@ class Pipeline():
     ## 4) return success or error msg
     if(len(self.main_pipeline)) > 0:
       last_func = self.main_pipeline[-1]
-      if(add_function in self.method_rules[last_func]):
+      if(add_function in self.method_rules['methods'][last_func]):
         self.main_pipeline.append(add_function)
       else:
         print('error: function cannot be added: ', add_function)
         return False
     else:
-      if(add_function in self.start_methods):
+      if(add_function in self.method_rules['start']):
         self.main_pipeline.append(add_function)
       else:
         print('error: function cannot be added: ', add_function)
