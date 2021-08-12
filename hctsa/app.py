@@ -56,8 +56,8 @@ def pipeline_run():
 
 @app.route("/pipeline/reset", methods=['GET', 'POST'])
 def pipeline_reset():
-  pipeline = Pipeline()
-  return
+  pipeline.reset_pipeline()
+  return 'pipeline resetted'
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)

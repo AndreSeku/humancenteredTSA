@@ -21,7 +21,7 @@ class Pipeline():
   # DICTIONARIE for specific pipeline rules, loaded from method_rules.yml file.
   method_rules = []
 
-  source = pkg_resources.resource_filename(__name__, './method_rules.yml')
+  method_rules_source = pkg_resources.resource_filename(__name__, './method_rules.yml')
   
   def __init__(self, series: pd.Series = None) -> None:
     '''
@@ -32,7 +32,7 @@ class Pipeline():
       self.core_data = series
     # TODO add try/catch block
     #with open('./pipeline/method_rules.yml', 'r') as file:
-    with open(self.source, 'r') as file:
+    with open(self.method_rules_source, 'r') as file:
       self.method_rules = yaml.safe_load(file)
     return
 
@@ -73,8 +73,16 @@ class Pipeline():
         return False
     return True
 
-  def del_method(self, position = -1):
+  def del_method(self, position = -1) -> bool:
     self.main_pipeline.pop(position)
+    return True
+
+  def reset_pipeline(self) -> None:
+    '''
+      Resetting the main_pipeline and core_data to an empty array [].
+    '''
+    self.main_pipeline = []
+    self.core_data = []
     return True
 
   def add_series(self, series: pd.Series) -> bool:

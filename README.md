@@ -22,6 +22,9 @@ http://0.0.0.0:5000/pipeline/delete
 http://0.0.0.0:5000/pipeline/run
 - GET: {} -> Runs the pipeline. Gets a JSON of the resulting pd.Series or pd.DataFrame Object
 
+http://0.0.0.0:5000/pipeline/reset
+- GET: {} -> Resetting the pipeline and the data to an empty pipeline.
+
 
 ## Project Structure
 - hctsa: core folders and files
