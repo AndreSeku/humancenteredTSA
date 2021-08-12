@@ -2,8 +2,8 @@
 human centered TimeSeries Analysis
 
 # Flask Webservice
-Start the Flask Webserver with `make start` within the main folder. The server is running under localhost on port 5000.
-`htpp://localhost:5000`
+Start the Flask Webserver with `make start` within the main folder. 
+The server is running under localhost on port 5000: `http://localhost:5000`
 
 ### REST API
 
