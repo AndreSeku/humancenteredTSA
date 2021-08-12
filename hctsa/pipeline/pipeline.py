@@ -4,8 +4,11 @@
 Pipeline Class, for building a user defined pipeline for timeseries manipulation and analysis.
 '''
 
-import pandas as pd
+
+import pkg_resources
 import yaml
+import pandas as pd
+
 import hctsa.pipeline.methods as methods
 
 class Pipeline():
@@ -17,15 +20,19 @@ class Pipeline():
 
   # DICTIONARIE for specific pipeline rules, loaded from method_rules.yml file.
   method_rules = []
+
+  source = pkg_resources.resource_filename(__name__, './method_rules.yml')
   
-  def __init__(self, series: pd.Series) -> None:
+  def __init__(self, series: pd.Series = None) -> None:
     '''
       Initialization of a new Pipeline Object.
       @param series: pd.Series
     '''
-    self.core_data = series
+    if series is not None:
+      self.core_data = series
     # TODO add try/catch block
-    with open('hctsa/pipeline/method_rules.yml', 'r') as file:
+    #with open('./pipeline/method_rules.yml', 'r') as file:
+    with open(self.source, 'r') as file:
       self.method_rules = yaml.safe_load(file)
     return
 
@@ -34,8 +41,11 @@ class Pipeline():
       Loads pd.Series data as core_data from filename.
       @param filename: str
     '''
-    self.core_data = pd.read_csv(path=filename, squeeze=True)
-    return
+    if filename == 'test':
+      self.core_data = pd.read_csv('../test_data/testdata.csv', squeeze=True)
+    else:
+      self.core_data = pd.read_csv(filename, squeeze=True)
+    return filename + ' loaded'
 
   def add_method(self, add_function: str, position: int = -1) -> bool:
     '''
@@ -63,8 +73,9 @@ class Pipeline():
         return False
     return True
 
-  def del_method():
-    ...
+  def del_method(self, position = -1):
+    self.main_pipeline.pop(position)
+    return True
 
   def add_series(self, series: pd.Series) -> bool:
     ...
