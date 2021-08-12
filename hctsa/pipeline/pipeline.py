@@ -85,6 +85,7 @@ class Pipeline():
     '''
       Returns the result of the Pipeline.
       Method for running the pipeline. Every method that was added into the pipeline will get executed in a sequential way.
+      TODO if _data is empty -> error
     '''
     _data = self.core_data
     print('PIPELINE: ', self.main_pipeline)
