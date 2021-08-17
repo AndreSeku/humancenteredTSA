@@ -24,7 +24,8 @@ def point_slope_transformation(series: Series) -> Series:
     @param series: pd.Series
   '''
   _values = []
+  print(series)
   for i in range(1, len(series)):
     _values.append(series[i] - series[i-1])
-  return Series(data=_values, index=series.index[1:])
+  return Series(data=_values, index=series.index[0:-1])
 
