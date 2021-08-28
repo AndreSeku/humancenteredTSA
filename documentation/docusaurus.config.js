@@ -6,7 +6,7 @@ module.exports = {
   title: 'hctsa documentation',
   tagline: 'build your time series pipeline',
   url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
+  baseUrl: '/humancenteredTSA/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
