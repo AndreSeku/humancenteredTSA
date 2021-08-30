@@ -5,7 +5,7 @@ import styles from './HomepageFeatures.module.css';
 const FeatureList = [
   {
     title: 'Low-Code Data Science',
-    Svg: require('../../static/img/undraw_docusaurus_mountain.svg').default,
+    Svg: require('../../static/img/iconmonstr-code-thin.svg').default,
     description: (
       <>
         Build your own Data Science Pipeline just with a few lines of code. Run the Pipeline and receive your analysis results visualized or descriptive.
@@ -14,7 +14,7 @@ const FeatureList = [
   },
   {
     title: 'No-Code Data Science',
-    Svg: require('../../static/img/undraw_docusaurus_tree.svg').default,
+    Svg: require('../../static/img/iconmonstr-product-6.svg').default,
     description: (
       <>
         The hcTSA-package comes with a Webserver. Hence, it is possible to use it as a backend for No-Code applications.
@@ -23,7 +23,7 @@ const FeatureList = [
   },
   {
     title: 'Human-Centered Data Science',
-    Svg: require('../../static/img/undraw_docusaurus_react.svg').default,
+    Svg: require('../../static/img/iconmonstr-user-circle-thin.svg').default,
     description: (
       <>
         With the hcTSA-package, you can focus on the real user's problem and develop a human-centered data science application.
