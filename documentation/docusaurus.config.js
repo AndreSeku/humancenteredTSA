@@ -3,18 +3,18 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'hctsa documentation',
+  title: 'humancenteredTSA documentation',
   tagline: 'build your time series pipeline',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://andreseku.github.io',
   baseUrl: '/humancenteredTSA/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'antsek', // Usually your GitHub org/user name.
-  projectName: 'hcmtsa', // Usually your repo name.
+  organizationName: 'AndreSeku', // Usually your GitHub org/user name.
+  projectName: 'humancenteredTSA', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'My Site',
+      title: 'humancenteredTSA Documentation',
       logo: {
         alt: 'My Site Logo',
         src: 'img/logo.svg',
@@ -28,7 +28,7 @@ module.exports = {
         },
         {to: '/blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/AndreSeku/humancenteredTSA',
           label: 'GitHub',
           position: 'right',
         },
@@ -49,6 +49,7 @@ module.exports = {
         {
           title: 'Community',
           items: [
+            // TODO
             {
               label: 'Stack Overflow',
               href: 'https://stackoverflow.com/questions/tagged/docusaurus',
@@ -72,12 +73,12 @@ module.exports = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/AndreSeku/humancenteredTSA',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} AndreSeku. Built with Docusaurus.`,
     },
     prism: {
       theme: lightCodeTheme,
@@ -92,13 +93,13 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
+            'https://github.com/AndreSeku/humancenteredTSA/tree/feature_docusaurus/documentation/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/blog/',
+            'https://github.com/AndreSeku/humancenteredTSA/tree/feature_docusaurus/documentation/blog/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

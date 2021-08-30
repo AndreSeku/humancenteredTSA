@@ -4,32 +4,29 @@ import styles from './HomepageFeatures.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
+    title: 'Low-Code Data Science',
     Svg: require('../../static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Build your own Data Science Pipeline just with a few lines of code. Run the Pipeline and receive your analysis results visualized or descriptive.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'No-Code Data Science',
     Svg: require('../../static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        The hcTSA-package comes with a Webserver. Hence, it is possible to use it as a backend for No-Code applications.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Human-Centered Data Science',
     Svg: require('../../static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        With the hcTSA-package, you can focus on the real user's problem and develop a human-centered data science application.
       </>
     ),
   },
