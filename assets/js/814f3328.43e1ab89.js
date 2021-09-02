@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[535],{5641:function(e){e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Welcome","permalink":"/humancenteredTSA/blog/welcome"},{"title":"Hello","permalink":"/humancenteredTSA/blog/hello-world"},{"title":"Hola","permalink":"/humancenteredTSA/blog/hola"}]}')}}]);

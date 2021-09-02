@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[536],{1461:function(a){a.exports=JSON.parse('{"allTagsPath":"/humancenteredTSA/blog/tags","slug":"hola","name":"hola","count":1,"permalink":"/humancenteredTSA/blog/tags/hola"}')}}]);
