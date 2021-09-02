@@ -23,7 +23,7 @@ const FeatureList = [
   },
   {
     title: 'Human-Centered Data Science',
-    Svg: require('../../static/img/iconmonstr-circle-thin.svg').default,
+    Svg: require('../../static/img/iconmonstr-user-circle-thin.svg').default,
     description: (
       <>
         With the hcTSA-package, you can focus on the real user's problem and develop a human-centered data science application.
