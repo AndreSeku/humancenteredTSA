@@ -4,15 +4,15 @@
         <title>humancenteredTSA documentation Blog</title>
         <link>https://andreseku.github.io/humancenteredTSA/blog</link>
         <description>humancenteredTSA documentation Blog</description>
-        <lastBuildDate>Thu, 30 May 2019 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 02 Sep 2021 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <item>
             <title><![CDATA[Welcome]]></title>
             <link>https://andreseku.github.io/humancenteredTSA/blog/welcome</link>
             <guid>welcome</guid>
-            <pubDate>Thu, 30 May 2019 00:00:00 GMT</pubDate>
-            <description><![CDATA[Blog features are powered by the blog plugin. Simply add files to the blog directory. It supports tags as well!]]></description>
+            <pubDate>Thu, 02 Sep 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[Welcome to the human-centered timeseries analysis package. A package to support low-code and no-code data science applications!]]></description>
         </item>
     </channel>
 </rss>
