@@ -93,13 +93,13 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/AndreSeku/humancenteredTSA/tree/feature_docusaurus/documentation/',
+            'https://github.com/AndreSeku/humancenteredTSA/tree/documentation/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/AndreSeku/humancenteredTSA/tree/feature_docusaurus/documentation/blog/',
+            'https://github.com/AndreSeku/humancenteredTSA/tree/documentation/blog/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
