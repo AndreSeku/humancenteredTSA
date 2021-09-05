@@ -69,14 +69,3 @@ def value_distribution(series: Series, bins=-1) -> Series:
     return series.round().value_counts().sort_index()
   else:
     return series.round().value_counts(bins=bins).sort_index()
-
-
-####### TEST
-if __name__ == '__main__':
-  test_df = pd.Series(data=[0.1,1.2,2.5,3.7,4.5,5,6,3,10,3,12,18,23,20,15,10]*3)
-  import seaborn as sns
-  import matplotlib.pyplot as plt
-  sns.lineplot(data=confidence_interval(test_df))
-  plt.show()
-  # print(simple_descriptive_analysis(test_df))
-  # print(rolling_mean(test_df))
