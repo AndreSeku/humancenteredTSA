@@ -1,6 +1,13 @@
-  start: ['zscore','standard','point_absdiff_transformation', 'point_slope_transformation']
+  start: ['zscore','standard','point_absdiff_transformation', 'point_slope_transformation', 'merge_sum', 'merge_subtract', 'merge_multiply', 'merge_divide', 'merge_mean']
 
   methods:
+    # Merge Methods
+    merge_sum: ['merge_sum', 'merge_subtract', 'merge_multiply', 'merge_divide', 'merge_mean', 'zscore', 'standard', 'rolling_mean', 'rolling_std', 'point_absdiff_transformation', 'point_slope_transformation', 'confidence_interval', 'value_distribution', 'simple_descriptive_analysis', 'sns_line_plot_series']
+    merge_mean: ['merge_sum', 'merge_subtract', 'merge_multiply', 'merge_divide', 'merge_mean', 'zscore', 'standard', 'rolling_mean', 'rolling_std', 'point_absdiff_transformation', 'point_slope_transformation', 'confidence_interval', 'value_distribution', 'simple_descriptive_analysis', 'sns_line_plot_series']
+    merge_subtract: ['merge_sum', 'merge_subtract', 'merge_multiply', 'merge_divide', 'merge_mean', 'zscore', 'standard', 'rolling_mean', 'rolling_std', 'point_absdiff_transformation', 'point_slope_transformation', 'confidence_interval', 'value_distribution', 'simple_descriptive_analysis', 'sns_line_plot_series']
+    merge_multiply: ['merge_sum', 'merge_subtract', 'merge_multiply', 'merge_divide', 'merge_mean', 'zscore', 'standard', 'rolling_mean', 'rolling_std', 'point_absdiff_transformation', 'point_slope_transformation', 'confidence_interval', 'value_distribution', 'simple_descriptive_analysis', 'sns_line_plot_series']
+    merge_divide: ['merge_sum', 'merge_subtract', 'merge_multiply', 'merge_divide', 'merge_mean', 'zscore', 'standard', 'rolling_mean', 'rolling_std', 'point_absdiff_transformation', 'point_slope_transformation', 'confidence_interval', 'value_distribution', 'simple_descriptive_analysis', 'sns_line_plot_series']
+    # Non-Merge Methods
     zscore: ['rolling_mean', 'rolling_std', 'confidence_interval', 'value_distribution', 'simple_descriptive_analysis', 'sns_line_plot_series'] 
     standard: ['rolling_mean', 'rolling_std', 'confidence_interval', 'value_distribution', 'simple_descriptive_analysis', 'sns_line_plot_series']
     rolling_mean: ['confidence_interval', 'value_distribution', 'simple_descriptive_analysis', 'sns_line_plot_series']
@@ -12,3 +19,5 @@
     simple_descriptive_analysis: []
     sns_line_plot_series: []
     sns_line_plot_ci: []
+
+  merge_methods: ['merge_sum', 'merge_subtract', 'merge_multiply', 'merge_divide', 'merge_mean']

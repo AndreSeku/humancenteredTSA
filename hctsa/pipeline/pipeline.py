@@ -14,9 +14,13 @@ import hctsa.pipeline.methods as methods
 class Pipeline():
   # Main Pipeline Array
   main_pipeline = []
+  merge_pipeline = []
 
   # Main Data Variable
   core_data = []
+
+  # List of additional Data
+  add_data = []
 
   # DICTIONARIE for specific pipeline rules, loaded from method_rules.yml file.
   method_rules = []
@@ -85,8 +89,12 @@ class Pipeline():
     self.core_data = []
     return True
 
-  def add_series(self, series: pd.Series) -> bool:
-    ...
+  def add_series(self, series: pd.Series, merge_method: str) -> bool:
+    '''
+      Add an additional timeseries into the pipeline with a specific method for merging two timeseries data (e.g. calculate the correlation)
+    '''
+    if self.add_method(merge_method):
+      self.add_data.append(series)
     return True
 
   def run(self) -> pd.Series:
@@ -99,6 +107,10 @@ class Pipeline():
     print('PIPELINE: ', self.main_pipeline)
     for method in self.main_pipeline:
       print('DOING: ', method)
-      _data = getattr(methods, method)(_data)
+      if method in self.method_rules['merge_methods']:
+        _data = getattr(methods, method)(_data, self.add_data[0])
+        del self.add_data[0]
+      else:
+        _data = getattr(methods, method)(_data)
       print(_data)
     return _data
