@@ -44,5 +44,6 @@ if TESTCASE == 1:
   pline.add_series(series=data, merge_method='merge_divide')
   pline.add_series(series=data, merge_method='merge_mean')
   pline.add_method('sns_line_plot_series')
+  # pline.add_series(series=data, merge_method='corr')
   pline.run()
 

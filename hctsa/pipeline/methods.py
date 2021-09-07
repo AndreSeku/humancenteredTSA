@@ -9,6 +9,7 @@ from ..preparation.normalization import *
 from ..preparation.transformation import *
 from ..preparation.multivariat import *
 from ..descriptive.univariate import *
+from ..descriptive.multivariat import *
 from ..visualization.seaborn import *
 
 # Preparations.Normalizations
@@ -56,6 +57,10 @@ def descr_uni_value_distribution(series: Series) -> Series:
 
 def descr_uni_simple_descriptive_analysis(series: Series) -> dict:
   return simple_descriptive_analysis(series)
+
+# Descriptive.Multivariat
+def descr_corr(series: Series, add_series: Series) -> int:
+  return corr(series, add_series)
 
 # Visualizations.Seaborn
 def viz_sns_line_plot_series(series: Series) -> None:
