@@ -8,7 +8,8 @@ There is the possibility to run the **hctsa**-package as a Python-based backend,
 
 ## Start
 
-To start the Flask-webserver, you can use the Makefile and use the following command in your shell:
+At first, you have to download the **hctsa**-package manually from GitHub.
+To start the Flask-webserver, you can use the Makefile and use the following command at the specific folder into your shell:
 ```bash
 make run
 ```
