@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-TESTCASE = 1
+TESTCASE = 0
 
 from hctsa.pipeline.pipeline import Pipeline
 import pandas as pd
