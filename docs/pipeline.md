@@ -50,6 +50,14 @@ pline.add_method('rolling_mean')
 pline.add_method('sns_line_plot_series')
 ```
 
+## Add data
+
+With the `add_series()` method there is the possibility to add another time series data to the actual time series. Furthermore, within this method, the time series data and the method used for merging needs to get specified:
+
+```python
+pline.add_series(series=data, merge_method='merge_sum')
+```
+
 ## Run
 
 For running the pipeline and generating an output or result, just use the `run`-method of the pipeline-class:

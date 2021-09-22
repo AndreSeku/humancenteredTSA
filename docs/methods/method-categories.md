@@ -9,6 +9,7 @@ All the available methods that can be added to the pipeline are clustered into t
 - Descriptive: Get descriptive analysis on the data
 - Further Analysis: Do more complex analysis on the data
 - Visualization: Analyse your results
+- Merge: Add another time series and merge those data.
 
 Furthermore, there is a differantitation betweeen univariate and multivariat data.
 

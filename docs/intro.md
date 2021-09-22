@@ -27,6 +27,7 @@ The methods are clustered in different categories:
 - preparations
 - descriptive analysis
 - visualizations
+- merge
 - more to be added..
 
 ### Preparation
@@ -44,6 +45,10 @@ Get your results visualized. There will be different ways and use of third-party
 ## Applications
 
 The idea of the `hctsa`-package is to provide the basis for **low-code** and **no-code** advanced applications. For specific applications, a flask-server with a REST api can get started, but the package and its methods can also be used individualy. 
+
+## Merge
+
+It is possible to add another time series to the actual (core) data. Hence, there are so called `merge` function, to merge those two time series with eachother, e.g., using the sum/product/mean... of the specific values. Only the union, based on the timestamps, can be used to merge time series data.
 
 <!-- 
 Run the development server:
