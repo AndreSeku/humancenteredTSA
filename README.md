@@ -23,3 +23,5 @@ https://andreseku.github.io/humancenteredTSA/
 - seaborn
 - flask
 - flask_cors
+- pkg_resources
+- yaml
